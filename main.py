@@ -1,8 +1,15 @@
 from operator import itemgetter
 from utils import data
 
-data_one_second = sorted(data[0:73], key=itemgetter('date'), reverse=True)
-data_sorted = sorted(data_one_second[0:73], key=itemgetter('state'), reverse=True)
+data_list = []
+
+for item in data:
+   if "from" in item:
+      data_list.append(item)
+
+data_one_second = sorted(data_list, key=itemgetter('date'), reverse=True)
+data_sorted = sorted(data_one_second, key=itemgetter('state'), reverse=True)
+
 y = 0
 
 while True:
