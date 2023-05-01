@@ -1,8 +1,12 @@
 from operator import itemgetter
 import json
 
-with open("operations.json", encoding="utf-8") as f:
-   data = json.load(f)
+def open_json():
+   with open("operations.json", encoding="utf-8") as f:
+      data = json.load(f)
+   return data
+
+data = open_json()
 
 def return_data(data):
    data_list = []
